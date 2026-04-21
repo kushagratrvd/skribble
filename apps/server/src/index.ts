@@ -34,6 +34,11 @@ app.get('/api/ping', (req, res) => {
   res.send('pong');
 });
 
+// Root Health Check (Render requires 200 OK on /)
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Error handler
 app.use(errorHandler);
 
