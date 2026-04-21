@@ -58,7 +58,7 @@ io.use(socketAuthMiddleware);
 // Register socket handlers
 registerSocketHandlers(io);
 
-httpServer.listen(env.PORT, () => {
+httpServer.listen(env.PORT, '0.0.0.0', () => {
   console.log(`
   Skribbl Clone Server Running   
   Port: ${env.PORT}              
