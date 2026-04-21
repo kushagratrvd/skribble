@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inconsolata:wght@400;700&display=swap');
+@config "../tailwind.config.ts";
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    background-color: #124da5;
+    background-image: url('./assets/bg-pattern.png');
+    background-repeat: repeat;
+    background-size: 350px;
+    background-attachment: fixed;
+    /* Pixelated background like original */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Use crisp/pixelated rendering for avatar atlases */
+  .crisp {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  ::-webkit-scrollbar {
+    width: 14px;
+    border-radius: 7px;
+    background-color: rgba(7, 36, 131, 0.75);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #1640c9;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #1e44be;
+  }
+}
+
+@layer components {
+  .game-container {
+    @apply max-w-7xl mx-auto px-4 py-6;
+  }
+
+  .card {
+    background-color: rgba(12, 44, 150, 0.75);
+    backdrop-filter: blur(4px);
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+    color: #f0f0f0;
+  }
+
+  .btn-primary {
+    background-color: #53e237;
+    color: #f0f0f0;
+    font-weight: 800;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.17);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 80ms;
+    @apply py-3 px-8;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #38c41c;
+  }
+  .btn-primary:active:not(:disabled) {
+    background-color: #30aa19;
+    padding-top: calc(0.75rem + 2px);
+  }
+  .btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  .btn-secondary {
+    background-color: #2c8de7;
+    color: #f0f0f0;
+    font-weight: 800;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.17);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 80ms;
+    @apply py-3 px-8;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background-color: #1671c5;
+  }
+  .btn-secondary:active:not(:disabled) {
+    background-color: #1361a9;
+    padding-top: calc(0.75rem + 2px);
+  }
+  .btn-secondary:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  .btn-danger {
+    background-color: #CE4F0A;
+    color: #f0f0f0;
+    font-weight: 800;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.17);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 80ms;
+    @apply py-2 px-6;
+  }
+
+  .input-field {
+    flex: 0 0 auto;
+    height: 34px;
+    width: 100%;
+    color: #2c2c2c;
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 3px;
+    padding: 0.2em 0.5em;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 0.12s ease, border-color 0.12s ease;
+  }
+  .input-field:focus {
+    outline: none;
+    background-color: white;
+    border-color: #56b2fd;
+    box-shadow: 0 0 10px -4px #56b2fd;
+  }
+  .input-field:hover:not(:disabled) {
+    background-color: white;
+  }
+  .input-field::placeholder {
+    color: #9b9b9b;
+  }
+}

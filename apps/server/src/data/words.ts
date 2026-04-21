@@ -1,0 +1,1 @@
+export { WORD_LIST, getRandomWords } from '@skribbl/shared';
